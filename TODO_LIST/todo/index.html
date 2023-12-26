@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <header>
+        <div class="headerTitle">
+            <img src="../src/images/rocket.svg" alt="logo">
+            <h1>todo</h1>
+        </div>
+    </header>
+    <main>
+        <form class="createTaskForm">
+            <input type="text" name="taskName" value="Adicione uma nova tarefa">
+            <button id="buttonCriar">Criar</button>
+        </form>
+        <form class="taskListForm">
+            <div class="taskListFormCounters">
+                <div class="taskListCounter">
+                    <p>Tarefas criadas</p>
+                    <div id="totalTaskCounter">5</div>
+                </div>
+                <div class="taskListCounter">
+                    <p style="color: var(--text-purple);">Concluídas</p>
+                    <div id="Concluídas">2 de 5</div>  
+                </div>
+            </div>
+            <div class="taskListFormList">
+                <div class="taskItem unfinished">
+                    <button class="button finishTask"></button>
+                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <button class="button deleteTask"></button>
+                </div>
+                <div class="taskItem unfinished">
+                    <button class="button finishTask"></button>
+                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <button class="button deleteTask"></button>
+                </div>
+                <div class="taskItem unfinished">
+                    <button class="button finishTask"></button>
+                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <button class="button deleteTask"></button>
+                </div>
+                <div class="taskItem finished">
+                    <button class="button finishTask"></button>
+                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <button class="button deleteTask"></button>
+                </div>
+                <div class="taskItem finished">
+                    <button class="button finishTask"></button>
+                    <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                    <button class="button deleteTask"></button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

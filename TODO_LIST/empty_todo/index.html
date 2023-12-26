@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>TO DO LIST</title>
+</head>
+<body>
+    <header>
+        <div class="headerTitle">
+            <img src="../src/images/rocket.svg" alt="logo">
+            <h1>Lista de Presença</h1>
+        </div>
+    </header>
+    <main>
+        <form class="createTaskForm">
+            <input type="text" name="taskName" value="Adicione uma nova tarefa">
+            <button id="buttonCriar">Criar</button>
+        </form>
+        <form class="taskListForm">
+            <div class="taskListFormCounters">
+                <div class="taskListCounter">
+                    <p>Tarefas criadas</p>
+                    <div id="totalTaskCounter">0</div>
+                </div>
+                <div class="taskListCounter">
+                    <p style="color: var(--text-purple);">Concluídas</p>
+                    <div id="Concluídas">0</div>  
+                </div>
+            </div>
+            <div class="taskListFormList">
+                <img src="../src/images/Clipboard.svg" alt="clipboard">
+                <p><span>Você ainda não tem tarefas cadastradas</span><br>
+                    Crie tarefas e organize seus itens a fazer
+                </p>
+            </div>
+        </form>
+    </main>
+</body>
+</html>
