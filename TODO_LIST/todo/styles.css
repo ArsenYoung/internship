@@ -1,3 +1,10 @@
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='checkbox']{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+  }
+
 @font-face {
     font-family: "Inter-Black";
     src: url(../src/fonts/Inter/Inter-Black.ttf);
@@ -194,7 +201,7 @@ main {
 }
 
 #taskListFormList {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -205,7 +212,7 @@ main {
 }
 
 #taskListFormListEmpty {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -241,23 +248,64 @@ main {
 
 .taskItem {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    align-items: flex-start;
 
-    width: 96%;
+    width: 100%;
 
     border: 1px solid var(--gray-400);
     border-radius: 8px;
 
     margin-bottom: 12px;
+    padding: 16px 0px;
+}
 
-    padding: 16px;
+.taskItem input{
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 19px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.taskItem input:checked {
+    position: relative;
+    width: 18px;
+    height: 17px;
+    background-color: var(--purple-dark);
+    border: none;
+    border-radius: 50%;
+    margin-top: 5px;
+    margin-left: 19px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.taskItem input:checked + label {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.taskItem input:checked::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    left: 20%;
+    top: 30%;
+    background-image: url(../src/images/check.svg);
+    background-repeat: no-repeat;
 }
 
 .taskItem label {
     word-wrap: break-word;
 
-    width: 70%;
+    width: 85%;
     font-family: Inter-Regular;
     font-size: 14px;
     font-weight: 400;
@@ -275,7 +323,8 @@ main {
     background-repeat: no-repeat;
     border: none;
 
-    margin: 16px 16px;
+    margin-right: 10px;
+    margin-left: 20px;
     
     cursor: pointer;
 }

@@ -5,6 +5,7 @@ const taskListFormList = document.getElementById('taskListFormList');
 const taskItemPattern = document.getElementById('taskItemPattern');
 const totalTaskCounterItem = document.getElementById('totalTaskCounter');
 const completedTaskCounterItem = document.getElementById('completedTaskCounter');
+
 let totalTaskCounter = 0
 let completedTaskCounter = 0;
 
