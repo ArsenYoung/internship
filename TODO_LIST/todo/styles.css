@@ -8,22 +8,30 @@
     src: url(../src/fonts/Inter/Inter-Regular.ttf);
 }
 
+* {
+   margin: 0;
+   padding: 0; 
+}
+
 :root {
-    --text-blue: #4EA8DE;
-    --text-white: #F2F2F2;
-    --text-purple: #8284FA;
-    --text-gray: #808080;
-    --background-black: #0D0D0D;
-    --background-blue: #1E6F9F;
-    --background-dark-gray: #1A1A1A;
-    --background-light-gray: #333333;
-    --background-gray: #262626;
+    --blue-dark: #1E6F9F;
+    --blue: #4EA8DE;
+    --purple: #8284FA;
+    --purple-dark: #5E60CE;
+    --gray-100: #F2F2F2;
+    --gray-200: #D9D9D9;
+    --gray-300: #808080;
+    --gray-400: #333333;
+    --gray-500: #262626;
+    --gray-600: #1A1A1A;
+    --gray-700: #0D0D0D;
+    --danger: #E25858;
 }
 
 body {
     margin: 0 auto;
 
-    background-color: var(--background-dark-gray);
+    background-color: var(--gray-600);
 }
 
 header {
@@ -33,13 +41,13 @@ header {
 
     height: 200px;
     
-    background-color: var(--background-black);
+    background-color: var(--gray-700);
 }
 
 .headerTitle {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 
     height: 48px;
 }
@@ -57,9 +65,13 @@ h1 {
     letter-spacing: 0em;
     text-align: left;
 
-    color: var(--text-blue);
+    color: var(--blue);
 
     margin: 0px 0px 0px 12px;
+}
+
+h1 span {
+    color: var(--purple-dark);
 }
 
 p {
@@ -71,6 +83,7 @@ main {
     flex-direction: column;
     align-items: center;
     
+    margin: 0% 17%;
 }
 
 .createTaskForm {
@@ -79,19 +92,19 @@ main {
 
     position: relative;
     top: -27px;
-    width: 736px;
+    width: 80%;
     height: 54px;
 
     margin-bottom: 37px;
 }
 
 .createTaskForm input {
-    width: 605px;
+    width: 90%;
 
-    border: 1px solid var(--background-black);
+    border: 1px solid var(--gray-700);
     border-radius: 8px;
-    background-color: var(--background-gray);
-    color: var(--text-gray);
+    background-color: var(--gray-500);
+    color: var(--gray-300);
 
     font-family: Inter-Regular;
     font-size: 16px;
@@ -102,27 +115,44 @@ main {
     padding: 16px;
 }
 
+.createTaskForm input:focus {
+    color: var(--gray-100);
+    outline-style:groove;
+    outline-color: var(--purple-dark);
+    outline-width: 2px;
+}
+
 .createTaskForm button {
     width: 90px;
 
     border: none;
     border-radius: 8px;
-    background-color: var(--background-blue);
+    background-color: var(--blue-dark);
     background-image: url(../src/images/plus.svg);
     background-repeat: no-repeat;
-    background-position: 60px 20px;
+    background-position: 80% 50%;
     text-align: left;
-    padding-left: 20px;
-    color: var(--text-white);
+    
+    color: var(--gray-100);
 
     font-family: Inter-Regular;
     font-size: 14px;
     font-weight: 700;
     line-height: 20px;
+
+    padding-left: 1.5%;
+    margin-left: 1%;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.createTaskForm button:hover {
+    background-color: var(--blue);
 }
 
 .taskListForm {
-    width: 736px;
+    width: 80%;
     min-height: 287px;
 }
 
@@ -143,14 +173,14 @@ main {
     font-weight: 700;
     line-height: 17px;
 
-    color: var(--text-blue);
+    color: var(--blue);
 
     margin: 0px;
 }
 
 .taskListCounter div {
-    background-color: var(--background-light-gray);
-    color: var(--text-white);
+    background-color: var(--gray-400);
+    color: var(--gray-100);
 
     border-radius: 999px;
 
@@ -163,67 +193,82 @@ main {
     line-height: 15px;
 }
 
-.taskListFormList {
-    display: flex;
+#taskListFormList {
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
 
     min-height: 244px;
 
-    border-top: 1px solid var(--background-light-gray);
+    margin-top: 24px;
+}
+
+#taskListFormListEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-top: 1px solid var(--gray-400);
     border-radius: 8px;
 
     margin-top: 24px;
 }
 
-.taskListFormList img {
+#taskListFormListEmpty img {
     margin-top: 64px;
 }
 
-.taskListFormList p {
+#taskListFormListEmpty p {
     font-family: Inter-Regular;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
     text-align: center;
 
-    color: var(--text-gray);
+    color: var(--gray-300);
 }
 
-.taskListFormList p span {
-    font-weight: 700px;
+#taskListFormListEmpty p span {
+    font-weight: 700;
     font-family: Inter-Black;
+}
+
+#taskItemPattern {
+    display: none;
 }
 
 .taskItem {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    width: 100%;
+    width: 96%;
 
-    border: 1px solid var(--background-light-gray);
+    border: 1px solid var(--gray-400);
     border-radius: 8px;
 
     margin-bottom: 12px;
+
+    padding: 16px;
 }
 
-.taskItem p {
-    margin: 16px 0px;
+.taskItem label {
+    word-wrap: break-word;
 
+    width: 70%;
     font-family: Inter-Regular;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0em;
     text-align: left;
+
+    color: var(--gray-100);
 }
 
-.taskItem.finished p {
-    text-decoration:line-through;
-}
-
-.taskItem .button {
+.buttonDeleteTask {
     width: 24px;
     height: 24px;
     background-color: transparent;
@@ -231,16 +276,14 @@ main {
     border: none;
 
     margin: 16px 16px;
+    
+    cursor: pointer;
 }
 
-.taskItem.unfinished .button.finishTask {
-    background-image: url(../src/images/check_off.svg);
+svg path {
+    transition: 0.3s;
 }
 
-.taskItem.finished .button.finishTask {
-    background-image: url(../src/images/check_on.svg);
-}
-
-.taskItem .button.deleteTask {
-    background-image: url(../src/images/trash.svg);
+.buttonDeleteTask:hover svg path{
+    fill: var(--danger);
 }
