@@ -18,18 +18,22 @@ inputField.addEventListener('click', () => {
 })
 
 buttonAddTask.addEventListener('click', () => {
+    runCreateTaskProcess();
+})
+
+function runCreateTaskProcess() {
     let taskDescription = inputField.value;
 
     if (taskDescription) {
-        addTask(taskDescription);
+        createTask(taskDescription);
         changeFormListVisability();
         updateCounters();
     } else {
         showError();
     }
-})
+}
 
-function addTask(taskDescription) {
+function createTask(taskDescription) {
     let newTask = taskItemPattern.cloneNode(true);
 
     inputField.value = '';
@@ -97,4 +101,10 @@ function changeCheckbox(event) {
     }
 
     updateCounters();
+}
+
+function handleEnterPress(event) {
+    if (event.keyCode == 13) {
+        runCreateTaskProcess();
+    }
 }
