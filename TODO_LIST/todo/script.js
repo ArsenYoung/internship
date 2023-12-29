@@ -71,8 +71,10 @@ function deleteTask(event) {
 
     while (elemForDel.className != 'taskItem') {
         elemForDel = elemForDel.parentNode;
-    } 
-
+    }
+    if (elemForDel.children[0].checked) {
+        completedTaskCounter--;
+    }
     elemForDel.remove();
     totalTaskCounter--;
     updateCounters();
