@@ -1,3 +1,5 @@
+'use strict'
+
 const buttonAddTask = document.getElementById('buttonCriar');
 const inputField = document.getElementById('inputTask');
 const taskListFormListEmpty = document.getElementById('taskListFormListEmpty');
