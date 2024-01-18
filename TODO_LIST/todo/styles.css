@@ -201,7 +201,7 @@ main {
 }
 
 #taskListFormList {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -212,7 +212,7 @@ main {
 }
 
 #taskListFormListEmpty {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
